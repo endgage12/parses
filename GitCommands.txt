@@ -5,3 +5,14 @@ git status
 git commit -m "Message"
 git checkout -b develop
 git reset ~hash~
+
+// ls - просмотр содержимого каталога
+
+//Скачать репозиторий с облака
+cd->необходимая директория->git clone github...proj
+
+//Загрузить репозиторий в облако
+git push
+
+//Аналогично предыдущему, но делается пуш только ветки master:
+git push origin master
