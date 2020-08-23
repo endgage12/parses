@@ -5,7 +5,7 @@ git status
 git commit -m "Message"
 git checkout -b develop
 git reset ~hash~
-
+12512616
 // ls - просмотр содержимого каталога
 
 //Слить в текущую ветку изменения из другой ветки
