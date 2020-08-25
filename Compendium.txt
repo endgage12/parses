@@ -74,3 +74,17 @@ return redirect('tasks');
 } 
 ?Как узнать доступные маршруты?
 artisan route:list
+?Как вернуть пользователя на прежнюю страницу?
+redirect()->back() 
+?Как передать данные с одной страницы на другую?
+redirect()->with() 
+Пример 3.42. Перенаnравление с данными
+Route::get('redirect-with-key-value', function () {
+return redirect('dashboard')
+->with('error', true);
+});
+Route::get('redirect-with-array', function () {
+return redirect('dashboard')
+});
+->with(['error' => true, 'message' => 'Whoops! ']); 
+4 ГЛАВА. ШАБЛОНИЗАТОР BLADE.
