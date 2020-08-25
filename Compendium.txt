@@ -1,0 +1,26 @@
+//
+Route::get('адрес обращения', что вернуть при обращении)
+# Route::get('/', 'ParseController@index'), при обращении к корневому файлу (index.php) произойдет вызов метода класса ParseController
+
+?Зачем использовать замыкания в возврате?
+Чтобы пройти все этапы middleware (промежуточные вещи laravel) возвращаемого значения через все middleware самого Laravel. Но использовать замыкания стоит только в небольших случаях, когда код невероятно мал и прост. Лучшее решение это использовать имя контроллера и метод, к которому он обращается
+
+Route::get - это не статический вызов в классе Route, а фасад, созданный Laravel. Эта запись идентична записи $router->get('/', function() {});
+
+Route::get('users/{id}/friends', function ($id) {
+	//
+}); 
+
+*php интерпритатор находится в vagrant, в общей папке проекта
+#Создать контроллер (через vagrant)
+1) Запуск vagrant (cd ~/Homestead)
+2) vagrant up
+3) vagrant ssh
+3*) ls -l (посмотреть директории)
+4) cd code/alexandreev
+php artisan make:controller UserController --resource
+
+//чтобы перейти на url адрес сайта
+0) Запустить vagrant-> в ssh-> перейти в корень сайта (ls)
+1) cd code/(*названиеСайта)
+2) php artisan serve -> адрес сайта
