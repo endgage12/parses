@@ -1,3 +1,8 @@
+Что такое CRUD
+CRUD обозначает создание, чтение, обновление, удаление (create, read, update,
+delete) - четыре основные операции, которые обычно веб-приложения предоставляют для ресурса. Например, вы можете создать новое сообщение в блоге,
+прочитать, обновить или удалить его. 
+
 //
 Route::get('адрес обращения', что вернуть при обращении)
 # Route::get('/', 'ParseController@index'), при обращении к корневому файлу (index.php) произойдет вызов метода класса ParseController
@@ -24,3 +29,10 @@ php artisan make:controller UserController --resource
 0) Запустить vagrant-> в ssh-> перейти в корень сайта (ls)
 1) cd code/(*названиеСайта)
 2) php artisan serve -> адрес сайта
+
+//Передача без/с аргументом в роут
+Пример 3.20. Route: :view()
+// Возвращает resources/views/welcome.Ыade.php
+Route::view('/', 'welcome');
+//Передает простые данные в Route::view()
+Route: : view( '/ ', 'welcome ', [ 'User' => 'Michael']); 
