@@ -59,3 +59,18 @@ php artisan make:controller UserController --resource
 Route::view('/', 'welcome');
 //Передает простые данные в Route::view()
 Route: : view( '/ ', 'welcome ', [ 'User' => 'Michael']); 
+
+#Получение ввода пользователя 
+Пример Э.25. Привязка основных действий формы
+// routes/web.php
+Route::get('tasks/create', 'TasksController@create');
+Route::post('tasks', 'TasksController@store'); 
+Пример Э.26. Обычный метод ввода формы контроллера
+// TasksController.php
+puЬlic function store()
+{
+Task::create(request()->only(['title', 'description']));
+return redirect('tasks');
+} 
+?Как узнать доступные маршруты?
+artisan route:list
