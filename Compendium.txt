@@ -97,6 +97,37 @@ There are no talks at this time period.
 @else
 There are {{ count($talks) }} talks at this time period.
 @endif
+//Про построение верстки
+@yield в шаблоне - место, куда можно обратиться из файла, который вызывает @extends. @yield - принимает аргументы, @section - передает аргументы. Т.е. в то место где стоит yield попадает значение секции. Например, 
+	template.blade.php... (шаблон)
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laravel</title>
+</head>
+    <body>
+        <div>Шапка</div>
+        <div>@yield('content')</div>
+        <div>Подвал</div>
+        <div>@yield('list')</div>
+    </body>
+</html>
+	test.blade.php...
+@extends('template')
+
+@section('content', 'Def')
+
+@section('list')
+    <ul>
+        <li>1. golsngh</li>
+        <li>2. sagasg</li>
+        <li>3. qhnagwqgq</li>
+        <li>4. profit</li>
+    </ul>
+@endsection
+
 5 ГЛАВА. ELOQUENT БАЗЫ ДАННЫХ
 Конфигурация доступа к базе данных находится в файлах config/database. php
 и .env.
@@ -104,4 +135,4 @@ There are {{ count($talks) }} talks at this time period.
 Запустить ее можно
 командой php artisan make:migration с единственным параметром - именем миграции.
 Например, чтобы создать рассмотренную таблицу, нужно ввести php artisan
-make: migration create_users_ taЫe. 
+make: migration create_users_ table. 
