@@ -97,3 +97,11 @@ There are no talks at this time period.
 @else
 There are {{ count($talks) }} talks at this time period.
 @endif
+5 ГЛАВА. ELOQUENT БАЗЫ ДАННЫХ
+Конфигурация доступа к базе данных находится в файлах config/database. php
+и .env.
+№Создание миграции
+Запустить ее можно
+командой php artisan make:migration с единственным параметром - именем миграции.
+Например, чтобы создать рассмотренную таблицу, нужно ввести php artisan
+make: migration create_users_ taЫe. 
